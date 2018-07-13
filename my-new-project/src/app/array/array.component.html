@@ -1,0 +1,37 @@
+<h1>Llamar lista sin ordenar</h1>
+<p>
+{{ users }}
+</p>
+<h1>Llamar usuarios por identificador del array</h1>
+<ul>
+  <li>{{ users[0] }}</li>
+  <li>{{ users[1] }}</li>
+  <li>{{ users[2] }}</li>
+  <li>{{ users[3] }}</li>
+  <li>{{ users[4] }}</li>
+  <li>{{ users[5] }}</li>
+</ul>
+<h1>Llamar usuarios mediante un FOR</h1>
+<ul>
+  <li *ngFor="let user of users">
+    {{ user }}
+  </li>
+</ul>
+<h1>Un IF</h1>
+<h5 *ngIf="pulse">
+  Pulse active
+</h5>
+<h1>SubDividir componentes</h1>
+<h3>Son 3 pasos esenciales
+    <ul>
+      <li>En el componente que se desea importar los datos de los usuarios component.ts agregar la propiedad Input y exportarla por medio de la clas</li>
+      <li>En el html externo llamar el componente y pasarle como atributo [nombreDeLaEntrada]="Entrada" </li>
+      <li>En el html interno llamar el nombreDeLaEntrada</li>
+    </ul>
+</h3>
+<h2>Lista</h2>
+<ul>
+    <li *ngFor="let user of users">
+      <app-user [nameUser]="user"></app-user>
+    </li>
+  </ul>
